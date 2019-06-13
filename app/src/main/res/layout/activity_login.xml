@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2F4A81"
     tools:context=".login.LoginActivity">
 
     <android.support.design.widget.TextInputLayout
@@ -11,7 +12,7 @@
         android:layout_width="395dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="208dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="8dp">
 
@@ -19,7 +20,11 @@
             android:id="@+id/uName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Correo"
+            android:textColor="#E9D41D"
+            android:textColorHighlight="#E9D41D"
+            android:textColorHint="#FFEB3B"
+            android:textColorLink="#E9D41D" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -36,8 +41,14 @@
         <android.support.design.widget.TextInputEditText
             android:id="@+id/edpass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:layout_height="42dp"
+            android:autoText="false"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="#E6D21E"
+            android:textColorHighlight="#E9D41D"
+            android:textColorHint="#FFEB3B"
+            android:textColorLink="#E9D41D" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
@@ -45,15 +56,15 @@
         android:layout_width="115dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/transparent"
+        android:text="Ingresar"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edpassL"
-        app:layout_constraintVertical_bias="0.217"
         tools:ignore="MissingConstraints" />
 
     <ProgressBar
@@ -69,4 +80,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:text="Registrate"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnvalidate"
+        app:layout_constraintVertical_bias="0.211" />
+
 </android.support.constraint.ConstraintLayout>
