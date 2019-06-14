@@ -6,4 +6,5 @@ public interface LoginView {
     void hideProgress();
     void showError(String error);
     void goHome();
+    void goRegistrer();
 }

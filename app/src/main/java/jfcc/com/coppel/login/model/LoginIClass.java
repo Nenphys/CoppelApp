@@ -5,14 +5,12 @@ import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 
-import java.util.List;
-
-import jfcc.com.coppel.login.Interface.UsuariosApi;
+import jfcc.com.coppel.net.Status;
+import jfcc.com.coppel.net.UsuariosApi;
+import jfcc.com.coppel.net.netclass;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginIClass implements LoginInteractor {
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -25,16 +23,12 @@ public class LoginIClass implements LoginInteractor {
                     listener.onError("Campos vacios");
                     return;
                 }
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.0.5:8080/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                UsuariosApi usuariosApi = retrofit.create(UsuariosApi.class);
-
-                Call<LoginApi> call = usuariosApi.getLogin(uName, pass);
-                call.enqueue(new Callback<LoginApi>() {
+                netclass net  = new netclass();
+                UsuariosApi usuariosApi = net.getConection();
+                Call<Status> call = usuariosApi.getLogin(uName, pass);
+                call.enqueue(new Callback<Status>() {
                     @Override
-                    public void onResponse(Call<LoginApi> call, Response<LoginApi> response) {
+                    public void onResponse(Call<Status> call, Response<Status> response) {
                        if(!response.isSuccessful()){
                            return;
                        }
@@ -46,7 +40,7 @@ public class LoginIClass implements LoginInteractor {
                     }
 
                     @Override
-                    public void onFailure(Call<LoginApi> call, Throwable t) {
+                    public void onFailure(Call<Status> call, Throwable t) {
                         listener.onError("Error: "+t);
                     }
                 });

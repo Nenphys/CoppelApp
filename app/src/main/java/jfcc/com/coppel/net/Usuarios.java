@@ -1,4 +1,4 @@
-package jfcc.com.coppel.login.model;
+package jfcc.com.coppel.net;
 
 public class Usuarios {
 

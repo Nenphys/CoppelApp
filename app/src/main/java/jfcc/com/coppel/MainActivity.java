@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import jfcc.com.coppel.login.Interface.UsuariosApi;
-import jfcc.com.coppel.login.model.Usuarios;
+import jfcc.com.coppel.net.UsuariosApi;
+import jfcc.com.coppel.net.Usuarios;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
